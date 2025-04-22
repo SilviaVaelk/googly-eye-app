@@ -6,6 +6,22 @@
   <title>Perfect Googly Eye</title>
   <style>
     body {
+       <div id="clear-hint" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  z-index: 9999;
+  font-family: sans-serif;
+  pointer-events: none;
+">
+  Press <strong>C</strong> to clear all eyes
+</div>
+
       margin: 0;
       overflow: hidden;
       background-size: cover;
@@ -45,6 +61,11 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       console.log("DOM loaded — placing eyes!");
+document.addEventListener("keydown", function(e) {
+  if (e.key.toLowerCase() === "c") {
+    document.querySelectorAll(".eye").forEach(eye => eye.remove());
+  }
+});
 
       document.addEventListener("click", function(e) {
         const eye = document.createElement("div");
