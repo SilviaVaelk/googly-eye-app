@@ -7,9 +7,13 @@
   <style>
     body {
       margin: 0;
-      background-color: #f0f4f8;
       overflow: hidden;
-    }
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: sans-serif;
+}
+
     .eye {
       position: absolute;
       width: 80px;
@@ -36,6 +40,9 @@
 </head>
 <body>
   <script>
+    // Set a random background image from Unsplash
+    document.body.style.backgroundImage = 'url("https://source.unsplash.com/random/1600x900?nature,fun")';
+
     document.addEventListener("DOMContentLoaded", function () {
       console.log("DOM loaded — placing eyes!");
 
