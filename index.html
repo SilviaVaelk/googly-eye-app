@@ -26,25 +26,26 @@
   </style>
 </head>
 <body>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      console.log("DOM fully loaded and script running!");
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded and script running!");
 
-      document.body.addEventListener("click", function(e) {
-        console.log("Click at:", e.pageX, e.pageY);
+    document.addEventListener("click", function(e) {
+      console.log("Click at:", e.pageX, e.pageY);
 
-        const eye = document.createElement("div");
-        eye.className = "eye";
-        eye.style.left = (e.pageX - 40) + "px";
-        eye.style.top = (e.pageY - 40) + "px";
+      const eye = document.createElement("div");
+      eye.className = "eye";
+      eye.style.left = (e.pageX - 40) + "px";
+      eye.style.top = (e.pageY - 40) + "px";
 
-        const base = document.createElement("img");
-        base.src = "assets/eye-base.png";
+      const base = document.createElement("img");
+      base.src = "assets/eye-base.png";
 
-        eye.appendChild(base);
-        document.body.appendChild(eye);
-      });
+      eye.appendChild(base);
+      document.body.appendChild(eye);
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
