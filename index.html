@@ -1,24 +1,20 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Googly Eye Debug</title>
   <style>
+    body {
+      background-color: #f0f4f8;
       margin: 0;
-      padding: 0;
-      background-color: #000000;
-      font-family: sans-serif;
       overflow: hidden;
     }
     .eye {
       position: absolute;
       width: 80px;
       height: 80px;
-      border: 2px solid red; /* debugging border */
+      border: 2px solid red;
       pointer-events: none;
-      z-index: 10;
     }
     .eye img {
       position: absolute;
@@ -37,40 +33,40 @@
   </style>
 </head>
 <body>
-<script>
-  console.log("Script loaded!");
+  <script>
+    console.log("Script loaded!");
 
-  document.body.addEventListener("click", function(e) {
-    console.log("Click detected at:", e.pageX, e.pageY);
+    document.body.addEventListener("click", function(e) {
+      console.log("Click detected at:", e.pageX, e.pageY);
 
-    const eye = document.createElement("div");
-    eye.className = "eye";
-    eye.style.left = (e.pageX - 40) + "px";
-    eye.style.top = (e.pageY - 40) + "px";
+      const eye = document.createElement("div");
+      eye.className = "eye";
+      eye.style.left = (e.pageX - 40) + "px";
+      eye.style.top = (e.pageY - 40) + "px";
 
-    const base = document.createElement("img");
-    base.src = "assets/eye-base.png";
+      const base = document.createElement("img");
+      base.src = "assets/eye-base.png";
 
-    const iris = document.createElement("img");
-    iris.src = "assets/eye-iris.png";
-    iris.className = "iris";
+      const iris = document.createElement("img");
+      iris.src = "assets/eye-iris.png";
+      iris.className = "iris";
 
-    const reflection = document.createElement("img");
-    reflection.src = "assets/eye-reflections.png";
+      const reflection = document.createElement("img");
+      reflection.src = "assets/eye-reflections.png";
 
-    eye.appendChild(base);
-    eye.appendChild(iris);
-    eye.appendChild(reflection);
-    document.body.appendChild(eye);
+      eye.appendChild(base);
+      eye.appendChild(iris);
+      eye.appendChild(reflection);
+      document.body.appendChild(eye);
 
-    function animateIris() {
-      const dx = (Math.random() - 0.5) * 10;
-      const dy = (Math.random() - 0.5) * 10;
-      iris.style.transform = `translate(${dx}px, ${dy}px)`;
-    }
+      function animateIris() {
+        const dx = (Math.random() - 0.5) * 10;
+        const dy = (Math.random() - 0.5) * 10;
+        iris.style.transform = `translate(${dx}px, ${dy}px)`;
+      }
 
-    setInterval(animateIris, 300);
-  });
-</script>
+      setInterval(animateIris, 300);
+    });
+  </script>
 </body>
 </html>
